@@ -31,7 +31,7 @@ static int ini_test(void)
     printf("ini_test\n");
     conf_set_string(conf, "wine:year", "1122");
     conf_set_string(conf, "wine:aaaa", "ddd");
-    conf_set_string(conf, "wine:eeee", "1.234");
+    conf_set_string(conf, "wine:eeee", "1.2344567");
     conf_dump(conf);
     conf_del(conf, "wine:aaaa");
     printf("year = %d\n", conf_get_int(conf, "wine:year"));

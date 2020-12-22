@@ -26,7 +26,7 @@
 
 int foo()
 {
-    struct ringbuffer *rb = rb_create(1024);
+    struct ringbuffer *rb = rb_create(25);
     const char *tmp = "hello world";
     ssize_t ret = 0;
     size_t len = 0;
@@ -47,6 +47,10 @@ int foo()
     memset(tmp2, 0, sizeof(tmp2));
     rb_read(rb, tmp2, sizeof(tmp2)-1);
     printf("rb_read str=%s\n", tmp2);
+    memset(tmp2, 0, sizeof(tmp2));
+    rb_read(rb, tmp2, sizeof(tmp2)-1);
+    printf("rb_read str=%s\n", tmp2);
+    rb_destroy(rb);
     return 0;
 }
 

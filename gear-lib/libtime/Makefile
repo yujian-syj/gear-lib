@@ -39,10 +39,10 @@ OBJS_UNIT_TEST	= test_$(LIBNAME).o
 # cflags and ldflags
 ###############################################################################
 ifeq ($(MODE), release)
-CFLAGS	:= -O2 -Wall -Werror -fPIC
+CFLAGS	:= -O2 -Wall -Werror -fPIC -Wno-error=deprecated-declarations
 LTYPE   := release
 else
-CFLAGS	:= -g -Wall -Werror -fPIC
+CFLAGS	:= -g -Wall -Werror -fPIC -Wno-error=deprecated-declarations
 LTYPE   := debug
 endif
 ifeq ($(OUTPUT),/usr/local)
